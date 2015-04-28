@@ -5,5 +5,6 @@ public class Task1 {
 		System.out.println("Hello world!");
 		System.out.println("Test commit");
 		System.out.println("Test commit2");
+		System.out.println("Test commit3");
 	}
 }
