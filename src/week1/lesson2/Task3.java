@@ -2,6 +2,7 @@ package week1.lesson2;
 
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -16,11 +17,11 @@ public class Task3 {
 	public static void main(String[] args) throws Exception{
 		  String fileName = "caesarText.txt";
 		  int key = 3;
-		  caesarCipter(fileName,key);//создает в текущей дериктории текстовый файл caesarCipter.txt и записывает туда щифр по указанному ключю
+		  caesarCipter(fileName,key);// создает в текущей дериктории текстовый файл caesarCipter.txt и записывает туда щифр по указанному ключю
 	}
 	
 	public static void caesarCipter(String fileName,int key) throws Exception{
-		//читаем содержимое с файла и заносим в строку  
+		// читаем содержимое с файла и заносим в строку  
 		FileReader fr = new FileReader(fileName);
 		  Scanner scan = new Scanner(fr);
 		  String text = "";
@@ -35,19 +36,27 @@ public class Task3 {
 		  }
 		  scan.close();
 		  
-		  // проверка данных добавленных в строку
-		  System.out.println(text);
+		  // создаем строку с текстовыми и числовыми символами
+		  String submbolForCipter = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыь0123456789 " + "\n";
 		  
-		  //создаем строку с текстовыми и числовыми символами
-		  String submbolForCipter = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыь0123456789";
+		  //создаем строку со смещением по ключу
+		  String valueOnKey = "";
+		  for(int i = 0; i < submbolForCipter.length(); i++){
+			  valueOnKey = valueOnKey + submbolForCipter.charAt((i + key)%submbolForCipter.length());
+		  }
 		  
-		  //теперь нужно сопоставить две строки, и пропустить все пробелы, знаки препинания и абзацы
+		  //проверяем елементы текста по отношению к submbolForCipter и подставляем значения по индексу с valueOnKey 
+		  String result = "";
+		  for (int i = 0; i < text.length(); i++){
+			  int indexSubmbolForCipter = submbolForCipter.indexOf(text.charAt(i));
+			  if (indexSubmbolForCipter > -1){
+				  result = result + valueOnKey.charAt(indexSubmbolForCipter);
+			  }
+		  }
 		  
-		  
-		  
-		  //возврат данных в указанный файл
+		  // возврат данных в указанный файл
 		  FileWriter fw = new FileWriter("caesarCipter.txt");
-		  fw.write(text);
+		  fw.write(result);
 		  fw.flush();
 		  fw.close();
 	}
