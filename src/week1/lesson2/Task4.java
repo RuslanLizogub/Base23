@@ -1,4 +1,8 @@
 package week1.lesson2;
+
+import java.io.FileReader;
+import java.util.Scanner;
+
 /*
  *  Task4.
 	1) Написать метод, который в качестве параметра принимает имя файла.
@@ -18,5 +22,25 @@ package week1.lesson2;
 	- полученный массив передать в метод 2 (ВЫВОД НА ЭКРАН)
  */
 public class Task4 {
-
+	public static void main(String[] args) throws Exception{  
+		String fileName = "variable.txt";
+	    caesarCipter(fileName);
+	}
+	
+	public static void caesarCipter(String fileName) throws Exception{  
+		FileReader fr = new FileReader(fileName);
+		  Scanner scan = new Scanner(fr);
+		  String text = "";
+		  int j = 0;
+		  while (scan.hasNextLine()) {
+			  if(j == 0){
+				  text = text + scan.nextLine();
+				  j = j + 1;
+			  }else{
+				  text = text + "\n" + scan.nextLine();
+			  }
+		  }
+		scan.close();
+		System.out.println(text);
+	}
 }
