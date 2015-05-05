@@ -1,6 +1,7 @@
 package week1.lesson2;
 
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -23,24 +24,73 @@ import java.util.Scanner;
  */
 public class Task4 {
 	public static void main(String[] args) throws Exception{  
-		String fileName = "variable.txt";
-	    caesarCipter(fileName);
+		String variableSet[][];
+		Scanner scan = new Scanner(System.in);
+		String fileName = scan.nextLine();
+		variableSet = arrayString(fileName);
+	    outInConsole(variableSet);
 	}
 	
-	public static void caesarCipter(String fileName) throws Exception{  
+	public static void  outInConsole(String[][] variableSet){  
+		int lengthVariableSet = variableSet.length;
+		for(int i = 0; i < lengthVariableSet; i++){
+			for(int j = 0; j < 2; j++){
+				System.out.print(variableSet[i][j] + "\t");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static String[][] arrayString(String fileName) throws Exception{  
 		FileReader fr = new FileReader(fileName);
-		  Scanner scan = new Scanner(fr);
-		  String text = "";
-		  int j = 0;
-		  while (scan.hasNextLine()) {
-			  if(j == 0){
-				  text = text + scan.nextLine();
-				  j = j + 1;
-			  }else{
-				  text = text + "\n" + scan.nextLine();
-			  }
-		  }
+		Scanner scan = new Scanner(fr);
+		String text = scan.nextLine();
 		scan.close();
-		System.out.println(text);
+		
+		//достаем масив переменных
+		String[] oneIteration = text.split(";");
+		int lengthOneIteration = oneIteration.length;
+		ArrayList<String> variableName = new ArrayList<>();
+		for(int i = 1; i < lengthOneIteration; i++){
+			String variable = "";
+			variable = oneIteration[i];
+			String[] twoIteration = variable.split("=");
+			variableName.add(twoIteration[0]);
+		}
+	
+		//достаем масив значений переменных
+		String[] twoIteration = text.split("\\[");
+		int lengthTwoIteration = twoIteration.length;
+	
+		ArrayList<String> variableValue = new ArrayList<String>();
+		for(int i = 0; i < lengthTwoIteration; i++){
+			String variable2 = "";
+			variable2 = twoIteration[i];
+			if(variable2.indexOf(']') >= 0){
+			String[] twoIteration1 = variable2.split("]");
+			    if(twoIteration1.length > 0){
+				variableValue.add(twoIteration1[0]);
+			    }
+			}
+		}
+	
+		
+		//Помещаем значения в динамический масив и возвращаем его
+		int lengthVariableName = variableName.size();
+		int lengthVariableValue = variableValue.size();
+		
+		String[][] result;
+		result = new String[lengthVariableName][2];
+		for(int i = 0;i < lengthVariableName; i++){
+			for(int j = 0;j < 2; j++){
+				if(j == 0){
+					result[i][j] =  variableName.get(i);	
+				}else{
+					result[i][j] =  variableValue.get(i);
+				}
+			} 
+		}
+		
+		return result;
 	}
 }
