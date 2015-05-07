@@ -18,5 +18,5 @@ package week1.lesson2;
 	  - все 3 авто остановить
  */
 public class Task6 {
-	//решение в классах Car and MainCar h
+	//решение в классах Car and MainCar
 }

@@ -17,5 +17,5 @@ package week1.lesson2;
 	после каждого перемещения вызываем метод printAboutMe.
  */
 public class Task7 {
-
+	//решение в классах Lift and MainLift
 }
