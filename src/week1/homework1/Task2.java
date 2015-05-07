@@ -34,11 +34,7 @@ public class Task2 {
 		//заполняем масив случайными числами
 		for(int i = 0;i < heihgt; i++){
 			for(int j = 0;j < width; j++){
-				if(j == 0){
-					mayArray[i][j] =  (int) (Math.random()*9);	
-				}else{
 					mayArray[i][j] =  (int) (Math.random()*9);
-				}
 			} 
 		}
 		
