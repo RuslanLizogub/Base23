@@ -19,29 +19,22 @@ public class Task2 {
 	    int heihgt = scan.nextInt();
 		int width = scan.nextInt();
 		
-		twoDimensionalArray(heihgt,width);
-	}
-	
-	public static void twoDimensionalArray(int heihgt,int width){
 		int[][] mayArray;
-		
 		if(heihgt <= 0 || width <= 0){
 			System.out.println("Не верный размер массива");
+			return;
 		}
-		
 		mayArray = new int[heihgt][width];
-		
 		//заполняем масив случайными числами
 		for(int i = 0;i < heihgt; i++){
 			for(int j = 0;j < width; j++){
 					mayArray[i][j] =  (int) (Math.random()*9);
 			} 
 		}
-		
 		//выводим на екран результат
 		for(int i = 0; i < heihgt; i++){
 			for(int j = 0; j < width; j++){
-				System.out.print(mayArray[i][j] + "\t");
+				System.out.print(mayArray[i][j]);
 			}
 			System.out.println();
 		}
