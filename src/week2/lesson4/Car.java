@@ -19,9 +19,6 @@ public class Car {
 	public void unSetTrack(){
 		track = null;
 	}
-	public void printAboutMe(){
-		
-	}
 	
 	public Car (String number,String color){
 		this.number = number;
