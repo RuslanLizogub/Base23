@@ -14,21 +14,19 @@ class MainMyInteger{
  */
 public class MyInteger {
 	private int value;
-	public void MyInteger(){
-		//this.value = value;
-		value = 10;
+	public void setValue(int k){
+		value = k;
 	}
-	
-	int getValue() {
-    	return value * value;
-    }
-	/*
-	public void setValue(int value){ //сеттер
-		this.value = value;
+	public int getValue(){
+		return value;
 	}
-	public int getValue(){ //геттер
-		 return value;
+	public MyInteger(int k){
+		value = k;
 	}
-	*/
+	public MyInteger plus(MyInteger obj){
+		int summa = this.value + obj.getValue();
+		MyInteger objRet = new MyInteger(summa);
+		return objRet;
+	}
 
 }
