@@ -25,7 +25,7 @@ public class Firm {
 	Employee employee3 = new Employee("Dima","Griwko",2200,4000,2013,12,"male","Qa");
 	
 	//количество дней отпуска каждого сотрудника
-	void calcVocations(){
+	public void calcVocations(){
 		int countMonthEmployee1 = (2015 * 12 + 5) - (employee1.yearOfAcquisition * 12 + employee1.monthOfAcquisition);
 		int countMonthEmployee2 = (2015 * 12 + 5) - (employee2.yearOfAcquisition * 12 + employee2.monthOfAcquisition);
 		int countMonthEmployee3 = (2015 * 12 + 5) - (employee3.yearOfAcquisition * 12 + employee3.monthOfAcquisition);
@@ -34,7 +34,7 @@ public class Firm {
 		System.out.println("Количество месяцев отпуска у сотрудника employee3 = " + countMonthEmployee3);
 	}
 	
-	void giveSalaryForAll(){
+	public void giveSalaryForAll(){
 		//выдача зп employee1
 		if(this.salaryAccount >= employee1.salaryAmount){
 			employee1.cardAccount = employee1.cardAccount + employee1.salaryAmount;//зачисляем зп на счет работника
@@ -61,7 +61,7 @@ public class Firm {
 		}
 	}
 	
-	void printAllEmploees(){
+	public void printAllEmployees(){
 		System.out.println("Информация о сотрудниках.\n");
 		System.out.println("Имя: " + employee1.name + ".\n" + 
 							"Фамилия: " + employee1.surname + ".\n" + 

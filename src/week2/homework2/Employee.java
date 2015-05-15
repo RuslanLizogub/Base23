@@ -7,7 +7,7 @@ package week2.homework2;
  - Выдать всем сотрудникам зарплату (перевести на карточный счет каждого сотрудника, сумму равную зарплате сотрудника, с главного счета фирмы) (метод void giveSalaryForAll())
  - Пересчитать всем сотрудникам дни отпуска (всем кто проработал больше 6 месяцев, по 2 дня за каждый отработанный месяц) (метод void calcVocations())
  */
-public class Employee {
+class Employee {
 	String name;
 	String surname;
 	int salaryAmount;
