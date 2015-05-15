@@ -28,5 +28,15 @@ public class Employee {
 		department = department1;
 	}
 	
+	int getSalaryAmount(){
+		return salaryAmount;
+	}
+	
+	void setCardAccount(int s){
+		cardAccount = s;
+	}
+	int getCardAccount(){
+		return cardAccount;
+	}
 	
 }

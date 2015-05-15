@@ -11,7 +11,10 @@ public class MainFirm {
 
 	public static void main(String[] args) {
 		Firm firmObj = new Firm();
-		firmObj.printAllEmploees();
+		firmObj.printAllEmploees();//выводит список всех сотрудников
+		firmObj.setSalaryAccount(10000);//пополняем баланс фирмы
+		firmObj.giveSalaryForAll();//выдаем зп всем сотрудникам
+		firmObj.calcVocations();//количество месяцев для отпуска у всех сотрудников
 	}
 
 }
