@@ -1,0 +1,45 @@
+package week3.lesson6;
+
+/*
+ Написать класс телефонов.
+ Phone(String number, boolean camera, int sideSize)
+ Nokia, Samsung
+ IPhone(int appleId),IPhone4, IPhone5
+ Что умеют делать:
+ - call(Phone ph)
+ - printModel()
+ - printAppleId()// для айфонов
+ MainPhone(список телефонов)
+ Добавить пару телефонов с номерами каждого вида в список.(Nokia, Samsung, IPhone4, IPhone5)
+ С консоли считать 2 (индекса)номера телефона и вызвать методы call  с одного номер на второй.
+ Для всех телефонов из списка вызвать метод printModel.
+ Затем для всех телефонов, для которых возможно вызвать метод printAppleId.
+ */
+abstract public class Phone {
+	String number;
+
+	public void printModel() {
+		System.out.println("Phone printModel(): " + getModel());
+	}
+
+	public String getModel() {
+		return this.getClass().getName();
+	}
+
+	public void call(Phone obj) {
+		String number1 = " телефон " + this.getModel() + " с номером "
+				+ this.getNumber();
+		String number2 = " телефон " + obj.getModel() + " с номером "
+				+ obj.getNumber();
+		System.out.println(number1 + " звоню на" + number1);
+
+	}
+
+	public Phone(String number) {
+		this.number = number;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+}
