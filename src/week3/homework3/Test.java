@@ -7,4 +7,11 @@ public class Test extends Object {
 
 	}
 
+	int test1;
+
+	public int Test() {
+		int q = 1;
+		int w = 2;
+		return q;
+	}
 }
