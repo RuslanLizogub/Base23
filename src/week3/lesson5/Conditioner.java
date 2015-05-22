@@ -1,4 +1,7 @@
 package week3.lesson5;
+
+import java.util.ArrayList;
+
 /*
  * Task. Написать класс BlockConditioners, Conditioner и MainConditioners.
 Класс BlockConditioners-это набор кондишнов.
@@ -20,6 +23,10 @@ public class Conditioner {
 	}
 	public int getTemperature(){
 		return temperature;
+	}
+	
+	public boolean getState(){
+		return state;
 	}
 	
 	public void turnOn(){
@@ -47,4 +54,5 @@ public class Conditioner {
 			System.out.println("Кондиционер выключен.");
 		}
 	}
+	
 }

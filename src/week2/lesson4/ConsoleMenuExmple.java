@@ -3,13 +3,16 @@ package week2.lesson4;
 import java.util.Scanner;
 
 public class ConsoleMenuExmple {
-	private static String[] operationNames = { "1. Прийти", "2. Уйти",
+	private static String[] operationNames = { "1. Прийтиbb", "2. Уйти",
 			"3. Зайти", "4. Выйти" };
 
 	public static void printMenu() {
-		for (String m : operationNames)
+		for (String m : operationNames){
 			System.out.println(m);
+		}
 	}
+	
+	
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

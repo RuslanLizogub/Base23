@@ -1,5 +1,7 @@
 package week3.lesson5;
 
+import java.util.ArrayList;
+
 /*
  * Task. Написать класс BlockConditioners, Conditioner и MainConditioners.
  Класс BlockConditioners-это набор кондишнов.
@@ -16,9 +18,8 @@ package week3.lesson5;
 public class MainConditioners {
 
 	public static void main(String[] args) {
-		System.out.println();
-		for (int i = 0; i < args.length; i++) {
-			
-		}
+		BlockConditioners blockConditioners = new BlockConditioners();
+		blockConditioners.consoleMenu();
 	}
+
 }
