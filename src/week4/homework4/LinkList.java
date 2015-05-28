@@ -21,14 +21,63 @@ public class LinkList {
 	public static void main(String[] args) {
 		LinkList list = new LinkList();
 		for (int i = 0; i < 5; i++) {
-			list.addElementFront(i, i + 1);
+			list.addElementBack(i, i + 1);
 		}
 
-		set(1, 222);
+		
 		printList();
-		System.out.println(indexOf(222));
+		System.out.println(sizeLinkList());
+		revert();
+		printList();
 	}
 	/////////////
+	//  5. Перестроить элементы в списке в обратном порядке, метод void revert()
+	public static void revert(){
+		if(head == null)        //если список пуст - 
+            return;             //ничего не делаем
+ 
+        if (head == tail) {     //если список состоит из одного элемента ничего не делаем
+            return;             //и выходим
+        }
+        
+    	LinkList s = tail;
+    	int buferElement;
+        for(int i = 0; i < sizeLinkList(); i++){
+        	buferElement = s.element;
+        	set( i, buferElement);
+        	s = s.next;
+        }
+        
+	}
+	public static int sizeLinkList(){
+		int size = 0;
+		if(head == null)        //если список пуст - 
+            return size;             //ничего не делаем
+ 
+        if (head == tail) {     //если список состоит из одного элемента ничего не делаем
+            return size = 1;             //и выходим
+        }
+        LinkList s = head;
+        while(s != null){
+        	size = size + 1;
+        	s = s.next;
+        }
+		return size;
+	}
+	// 4. Поменять местами первый и последний элементы, метод void swapFirstLast()
+	public static void swapFirstLast(){
+		if(head == null)        //если список пуст - 
+            return;             //ничего не делаем
+ 
+        if (head == tail) {     //если список состоит из одного элемента ничего не делаем
+            return;             //и выходим
+        }
+        
+        int bufer = head.element;
+        head.setElement(tail.element);
+        tail.setElement(bufer);
+	}
+	// 3. Поиск элемента по значению, метод int indexOf(int element)
 	public static int indexOf(int element){
 		LinkList t = head;
 		while (t.next != null) {
@@ -68,7 +117,7 @@ public class LinkList {
 			t = t.next;
 		}
 	}
-	
+	//  1. Замена значения элемента по индексу, метод void set(int index, int element)
 	public static void set(int index, int element){
 		LinkList t = head;
 		while (t.next != null) {
@@ -152,6 +201,10 @@ public class LinkList {
 	int index;
 	int element;
 	LinkList next;
+	
+	public void setElement(int element){
+		this.element = element;
+	}
 
 	public LinkList(int index, int element) {
 		this.index = index;
