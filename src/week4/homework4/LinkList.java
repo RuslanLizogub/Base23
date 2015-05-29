@@ -17,21 +17,25 @@ package week4.homework4;
  11*. Удалить повторяющиеся элементы из списка, в случае если реализован интерфейс Comparable, метод void removeDuplicates()
  */
 public class LinkList {
-
-	public static void main(String[] args) {
-		LinkList list = new LinkList();
-		for (int i = 0; i < 5; i++) {
-			list.addElementBack(i, i + 1);
-		}
-
-		
-		printList();
-		System.out.println(sizeLinkList());
-		revert();
-		printList();
+	int index;
+	int element;
+	static LinkList head;
+	static LinkList tail;
+	LinkList next;
+	
+	public void setElement(int element){
+		this.element = element;
 	}
-	/////////////
-	//  5. Перестроить элементы в списке в обратном порядке, метод void revert()
+
+	public LinkList(int index, int element) {
+		this.index = index;
+		this.element = element;
+	}
+
+	public LinkList() {
+
+	}
+	// / 5. Перестроить элементы в списке в обратном порядке, метод void revert()
 	public static void revert(){
 		if(head == null)        //если список пуст - 
             return;             //ничего не делаем
@@ -43,6 +47,7 @@ public class LinkList {
     	LinkList s = tail;
     	int buferElement;
         for(int i = 0; i < sizeLinkList(); i++){
+        	int[] buferArray = new int [sizeLinkList()];
         	buferElement = s.element;
         	set( i, buferElement);
         	s = s.next;
@@ -130,8 +135,6 @@ public class LinkList {
 	}
 
 	// //////////
-	static LinkList head;
-	static LinkList tail;
 
 	public void addElementFront(int index, int element) { // добавляет елемент
 															// спереди
@@ -196,23 +199,4 @@ public class LinkList {
 		}
 
 	}
-
-	// //////////
-	int index;
-	int element;
-	LinkList next;
-	
-	public void setElement(int element){
-		this.element = element;
-	}
-
-	public LinkList(int index, int element) {
-		this.index = index;
-		this.element = element;
-	}
-
-	public LinkList() {
-
-	}
-
 }
