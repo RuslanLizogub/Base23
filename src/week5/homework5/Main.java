@@ -20,10 +20,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		LinkList ml = new LinkList();
-		ml.addBack(1, 22222);
-		ml.addBack(2, 33);
-		ml.addBack(3, 333);
-		ml.addBack(4, 44444);
+		ml.addBack(1, 11);
+		ml.addBack(2, 22);
+		ml.addBack(3, 33);
+		ml.addBack(4, 44);
 
 		ml.printList();
 		
