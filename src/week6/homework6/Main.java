@@ -1,26 +1,25 @@
 package week6.homework6;
-
-/*
- * Написать класс LinkList, содержащий элементы типа int, реалзизующем связанный список с классом элемента Node.
- Для класса LinkList написать методы:
-
- 1. Замена значения элемента по индексу, метод void set(int index, int element)
- 2. Удаление элемента по индексу, метод void remove(int index)
- 3. Поиск элемента по значению, метод int indexOf(int element)
- 4. Поменять местами первый и последний элементы, метод void swapFirstLast()
- 5. Перестроить элементы в списке в обратном порядке, метод void revert()
- 6. Поменять местами наибольший и наименьший элементы, в случае если реализован интерфейс Comparable, метод void swapMaxMin()
- 7. Частично упорядочить элементы списка, в случае если реализован интерфейс Comparable, метод void sortPartial(int index)
- 8. Сравнение двух списков, метод boolean equals(LinkList list)
- 9. Сложение двух списков, метод LinkList concat(LinkList list)
- 10*. Отсортировать список, в случае если реализован интерфейс Comparable, метод void sort()
- 11*. Удалить повторяющиеся элементы из списка, в случае если реализован интерфейс Comparable, метод void removeDuplicates()
- */
+/*Написать собственную реализацию динамического массива MyArrayList.
+Сделать параметризированную релизацию списка, параметр E.
+Реализовать следующие методы
+- void add(E value)
+- int get(int index)
+- boolean set(int index, E value)
+- boolean add(int index, E value)
+- int indexOf(E value)
+- int size()
+- E remove(int index)
+*/
 public class Main {
 
 	public static void main(String[] args) {
-		LinkList list1 = new LinkList();
-
+		MyArrayList<Integer> list = new MyArrayList<Integer>();
+		
+		list.add(6);
+		list.add(6);
+		System.out.println(list.size);
+		list.set(0, 3);
+		System.out.println(list.indexOf(6));
 	}
 
 }
