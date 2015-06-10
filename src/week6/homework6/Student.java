@@ -7,7 +7,7 @@ void sort(Student[] students)
 
 Классы задания: hw8.sort.QuickSorter, hw8.sort.Student
 */
-public class Student {
+class Student {
 	int rating;
 	
 	public Student(int rating){
