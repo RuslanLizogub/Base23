@@ -1,0 +1,26 @@
+Клонирование - возможность клонировать объект (создавать копию)
+Для клонирования реализовывается Clonable (метод Clone)
+@Override
+public Car clone() throws CloneNotSupported exception {
+ Car car1 = (Car)super.clone();
+ return car1;
+}
+поверхностное клонирование - ссылка на объект car1 и car2 одна и та же
+
+Потоки ввода-вывода делятся на байтовые и символьные
+
+4 осн класса:
+
+InputStream - байт
+OutputStream - бфйт
+Reader - симв
+Writer - симв
+
+работа с переменной или массивом:
+
+byte b
+byte[] bs
+
+System.in - объект потока для считывания вс консоли
+System.out - для записи
+System.err - для записи
