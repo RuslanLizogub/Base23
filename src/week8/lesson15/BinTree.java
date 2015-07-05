@@ -4,6 +4,6 @@ public class BinTree {
 	Node top;
 	
 	public void add(){
-		
+		//
 	}
 }
